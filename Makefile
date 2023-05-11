@@ -14,7 +14,7 @@ PIP := pip
 .PHONY: run
 run:  ## Run the application
 	@. venv/bin/activate && \
-	uvicorn main:app --reload
+	( trap 'echo ""; exit 0' INT && uvicorn main:app --reload )
 
 .PHONY: install
 install:  ## Install dependencies
