@@ -13,20 +13,18 @@ PIP := pip
 # Targets
 .PHONY: run
 run:  ## Run the application
+	@. venv/bin/activate && \
 	uvicorn main:app --reload
-
-.PHONY: virtualenv
-virtualenv:  ## Create virtual environment
-	$(PYTHON) -m venv venv
 
 .PHONY: install
 install:  ## Install dependencies
-	$(PYTHON) -m venv venv
-	source venv/bin/activate
+	@$(PYTHON) -m venv venv && \
+	. venv/bin/activate && \
 	$(PIP) install -r requirements.txt
 
 .PHONY: test
 test:  ## Run unit tests
+	@. venv/bin/activate && \
 	$(PYTHON) -m unittest Test/test_payment.py
 
 .PHONY: clean
