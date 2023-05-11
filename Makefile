@@ -15,6 +15,10 @@ PIP := pip
 run:  ## Run the application
 	uvicorn main:app --reload
 
+.PHONY: virtualenv
+virtualenv:  ## Create virtual environment
+	$(PYTHON) -m venv venv
+
 .PHONY: install
 install:  ## Install dependencies
 	$(PYTHON) -m venv venv
