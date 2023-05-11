@@ -27,7 +27,6 @@ class PaymentGatewayTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["status"], "success")
         self.assertIsNotNone(response.json()["authorization_code"])
-        # Add more assertions to validate the response and database state
 
     def test_process_payment_success_debitcard(self):
         # Test the successful payment processing for a debit card
@@ -48,7 +47,6 @@ class PaymentGatewayTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["status"], "success")
         self.assertIsNotNone(response.json()["authorization_code"])
-        # Add more assertions to validate the response and database state
 
     def test_process_payment_invalid_card_number_creditcard(self):
         # Test processing payment with an invalid credit card number
@@ -68,7 +66,6 @@ class PaymentGatewayTests(unittest.TestCase):
 
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json()["detail"], "Invalid card number")
-        # Add more assertions to validate the error response
 
     def test_process_payment_expired_card_debitcard(self):
         # Test processing payment with an expired debit card
@@ -108,7 +105,6 @@ class PaymentGatewayTests(unittest.TestCase):
 
         self.assertEqual(response.status_code, 422)
         self.assertEqual(response.json()["detail"], "Insufficient funds")
-        # Add more assertions to validate the error response
 
     def test_process_payment_insufficient_balance_debitcard(self):
         # Test processing payment with insufficient balance in a debit card
@@ -128,7 +124,6 @@ class PaymentGatewayTests(unittest.TestCase):
 
         self.assertEqual(response.status_code, 422)
         self.assertEqual(response.json()["detail"], "Insufficient funds")
-        # Add more assertions to validate the error response
 
     def test_process_payment_invalid_credit_card_cvv(self):
         # Test invalid credit card payment with invalid CVV

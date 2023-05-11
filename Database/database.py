@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
-from Models.models import Base, Payment
+from Models.payment import Base, Payment
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///Database/payment.db"
 

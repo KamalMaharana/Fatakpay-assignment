@@ -6,7 +6,7 @@ from datetime import datetime
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 import secrets
-from Models.models import Payment
+from Models.payment import Payment
 from Models.payment_request import PaymentRequest
 from Models.payment_response import PaymentResponse
 from Database.database import get_db, save_payment
