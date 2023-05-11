@@ -10,4 +10,3 @@ class PaymentResponse(BaseModel):
     status: str
     authorization_code: Optional[str]
     time: str
-    http_status_code: int

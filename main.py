@@ -40,7 +40,6 @@ def process_payment(
         if payment_request.type.lower() not in ["creditcard", "debitcard"]:
             raise HTTPException(status_code=400, detail="Invalid payment type")
 
-        print("Payment Request: ", payment_request)
         card_type = payment_request.type
         card_number = payment_request.card.number
 
@@ -107,7 +106,6 @@ def process_payment(
             status="success" if authorization_code else "failure",
             authorization_code=authorization_code,
             time=payment_record.time.isoformat(),
-            http_status_code=200,
         )
         return JSONResponse(
             content=payment_response.dict(),
