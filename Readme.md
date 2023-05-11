@@ -22,7 +22,7 @@ Make sure to verify the installation by running `python3 --version`, `pip --vers
 
    ```bash
    git clone https://github.com/KamalMaharana/Fatakpay-assignment.git
-   cd payment-gateway
+   cd Fatakpay-assignment
    ```
 
 2. Install dependencies:
